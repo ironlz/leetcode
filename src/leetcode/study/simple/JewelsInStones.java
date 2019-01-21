@@ -1,3 +1,5 @@
+package leetcode.study.simple;
+
 import java.util.BitSet;
 
 /**
