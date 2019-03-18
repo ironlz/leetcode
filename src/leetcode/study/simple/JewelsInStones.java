@@ -21,13 +21,22 @@ import java.util.BitSet;
  *  J 中的字符不重复。
  */
 public class JewelsInStones {
+    /**
+     * 计算所拥有的石头S中，宝石的数量。
+     * 时间复杂度O（J+S）
+     * @param J 宝石的类型
+     * @param S 石头
+     * @return 石头中宝石的数量
+     */
     public static int numJewelsInStones(String J, String S) {
         BitSet bitSet = new BitSet(Character.MAX_VALUE);
+        // 标记哪种是宝石
         for(int i = 0; i < J.length(); i++){
             char cur = J.charAt(i);
             bitSet.set(cur);
         }
         int sum = 0;
+        // 统计宝石数量
         for(int i = 0; i < S.length(); i++){
             char cur = S.charAt(i);
             if(bitSet.get(cur))
